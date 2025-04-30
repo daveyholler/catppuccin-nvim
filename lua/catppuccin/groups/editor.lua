@@ -1,6 +1,12 @@
 local M = {}
 
 function M.get()
+	local C = require("catppuccin.palettes").get_palette()
+	local O = require("catppuccin").options
+	local U = require("catppuccin.utils.colors")
+	-- Make sure C.none is defined for transparent backgrounds
+	C.none = "NONE"
+	
 	return {
 		ColorColumn = { bg = C.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = C.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
